@@ -138,8 +138,13 @@
   hosts: HAproxy
   become: yes
   tasks:
+    - name: Copy uipassword template to target
+      template:
+        src: uipassword_template.j2  # Path to your template file
+        dest: uipassword
+  
     - name: Read 'uipassword' file
-      shell: cat {{ inventory_dir }}/uipassword
+      shell: cat uipassword
       register: password_file_content
     
     - name: Set username and password from 'uipassword' file
