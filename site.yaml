@@ -139,7 +139,7 @@
   become: yes
   tasks:
     - name: Read 'uipassword' file
-      shell: cat ~NSO-UDP-LOAD-BALANCING-A2.3/uipassword
+      shell: cat ~/NSO-UDP-LOAD-BALANCING-A2.3/uipassword
       register: password_file_content
     
     - name: Set username and password from 'uipassword' file
