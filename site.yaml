@@ -138,6 +138,10 @@
   hosts: HAproxy
   become: yes
   tasks:
+    - name: Debug file path
+      debug:
+        msg: "File path: {{ playbook_dir }}/NSO-UDP-LOAD-BALANCING-A2.3/uipassword"
+  
     - name: Read 'uipassword' file
       shell: cat NSO-UDP-LOAD-BALANCING-A2.3/uipassword
       register: password_file_content
